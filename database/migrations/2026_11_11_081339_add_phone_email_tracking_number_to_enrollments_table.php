@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -8,16 +9,12 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::table('enrollments', function (Blueprint $table) {
-            $table->string('phone_number', 20)->nullable();
-            $table->string('email', 255)->nullable();
-        });
+        // phone_number and email are handled by
+        // the 2026_11_11_085746 migration.
     }
 
     public function down(): void
     {
-        Schema::table('enrollments', function (Blueprint $table) {
-            $table->dropColumn(['phone_number', 'email']);
-        });
+        // No columns to remove.
     }
 };
