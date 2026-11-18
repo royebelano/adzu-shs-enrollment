@@ -1,0 +1,314 @@
+
+/* ==========================================
+   ENROLLMENT WIZARD
+========================================== */
+
+[hidden] {
+    display: none !important;
+}
+
+/* Step navigation */
+
+.sched-steps li {
+    transition: color .2s ease;
+}
+
+.sched-steps li.done span {
+    background: #1d3a7a;
+    border-color: #1d3a7a;
+    color: #fff;
+}
+
+.sched-steps li.done em {
+    color: #1d3a7a;
+    font-weight: 700;
+}
+
+/* Navigation buttons */
+
+.wizard-actions,
+.confirm-actions {
+    width: 210mm;
+    max-width: calc(100% - 32px);
+    margin: 24px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.wizard-back,
+.wizard-next {
+    min-height: 44px;
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.wizard-back {
+    background: #edf0f5;
+    color: #263653;
+    border: 1px solid #d8deea;
+}
+
+.wizard-next {
+    background: #14264f;
+    color: #fff;
+}
+
+.wizard-back:hover {
+    background: #dfe5ef;
+}
+
+.wizard-next:hover {
+    background: #1d3a7a;
+    transform: translateY(-1px);
+}
+
+.wizard-next:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Confirmation page */
+
+.confirm-panel {
+    width: 100%;
+    max-width: 950px;
+    margin: 35px auto 60px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    color: #1c2b4a;
+}
+
+.confirm-heading {
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.confirm-kicker {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #9a7200;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .13em;
+}
+
+.confirm-heading h1 {
+    margin: 0 0 10px;
+    color: #14264f;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 30px;
+}
+
+.confirm-heading p {
+    max-width: 620px;
+    margin: 0 auto;
+    color: #6b768c;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Review cards */
+
+.confirm-card {
+    margin-bottom: 18px;
+    padding: 22px;
+    background: #fff;
+    border: 1px solid #e0e5ee;
+    border-radius: 13px;
+    box-shadow: 0 4px 16px rgba(28, 43, 74, .05);
+}
+
+.confirm-card h2 {
+    margin: 0 0 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #edf0f5;
+    color: #14264f;
+    font-size: 16px;
+}
+
+.confirm-card h3 {
+    margin: 18px 0 14px;
+    color: #263653;
+    font-size: 14px;
+}
+
+.confirm-card h3:first-child {
+    margin-top: 0;
+}
+
+.review-section + .review-section {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #edf0f5;
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 24px;
+}
+
+.review-item {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.review-label {
+    color: #788399;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.review-value {
+    color: #1c2b4a;
+    font-size: 14px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+#reviewAppointment {
+    color: #14264f;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/* Documents */
+
+.review-documents {
+    display: grid;
+    gap: 10px;
+}
+
+.review-document {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 13px 15px;
+    border: 1px solid #edf0f5;
+    border-radius: 9px;
+    font-size: 13px;
+}
+
+.review-document strong {
+    color: #263653;
+}
+
+.review-document span {
+    text-align: right;
+    color: #6b768c;
+    overflow-wrap: anywhere;
+}
+
+.review-document.has-file {
+    background: #f0f8f2;
+    border-color: #cce6d2;
+}
+
+.review-document.missing-file {
+    background: #fff6f4;
+    border-color: #f1cbc5;
+}
+
+.review-document.missing-file span {
+    color: #a83224;
+}
+
+.review-document.optional-file {
+    background: #f7f8fa;
+}
+
+/* Notice */
+
+.confirm-notice {
+    margin-top: 20px;
+    padding: 17px 19px;
+    background: #fff9e8;
+    border: 1px solid #f0d98a;
+    border-radius: 10px;
+    color: #705500;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.confirm-notice strong {
+    display: block;
+}
+
+.confirm-notice p {
+    margin: 5px 0 0;
+}
+
+/* Review actions */
+
+.confirm-actions {
+    margin-top: 24px;
+    margin-bottom: 45px;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 700px) {
+    .confirm-panel {
+        margin-top: 20px;
+        padding: 0 12px;
+    }
+
+    .confirm-heading h1 {
+        font-size: 24px;
+    }
+
+    .confirm-card {
+        padding: 16px;
+    }
+
+    .review-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .review-document {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .review-document span {
+        text-align: left;
+    }
+
+    .wizard-actions,
+    .confirm-actions {
+        width: auto;
+        max-width: none;
+        margin: 20px 12px;
+        flex-direction: column-reverse;
+    }
+
+    .wizard-back,
+    .wizard-next {
+        width: 100%;
+    }
+}
+
+/* Do not print the review interface. */
+
+@media print {
+    .confirm-panel,
+    .wizard-actions {
+        display: none !important;
+    }
+}

@@ -1,0 +1,320 @@
+
+/* ========================================
+   STEP 1 PAGE
+======================================== */
+
+.step1-page {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: #14213d;
+}
+
+/* ========================================
+   PAGE BANNER
+======================================== */
+
+.step1-banner {
+    min-height: 116px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(110deg, #091326, #14264b);
+    border-radius: 20px;
+    box-shadow: 0 7px 16px rgba(15, 23, 42, .12);
+}
+
+.step1-banner::after {
+    content: "";
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    right: -25px;
+    top: -65px;
+    border: 20px solid rgba(255,255,255,.07);
+    border-radius: 50%;
+}
+
+.step1-number {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    background: #ffcf29;
+    color: #101a30;
+    border-radius: 13px;
+    font-weight: 800;
+    font-size: 12px;
+}
+
+.step1-banner-content {
+    position: relative;
+    z-index: 1;
+}
+
+.step1-eyebrow {
+    color: #ffcf29;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.step1-banner h1 {
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 23px;
+    margin: 6px 0;
+}
+
+.step1-banner p {
+    color: #aabbd7;
+    font-size: 11px;
+}
+
+/* ========================================
+   SEARCH TOOLBAR
+======================================== */
+
+.step1-toolbar {
+    min-height: 53px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 13px;
+    box-shadow: 0 2px 4px rgba(15, 23, 42, .04);
+}
+
+.step1-toolbar-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #435b82;
+}
+
+.step1-search-form {
+    display: flex;
+    gap: 7px;
+}
+
+.step1-search-form input {
+    width: 255px;
+    padding: 9px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    font-size: 11px;
+}
+
+.step1-search-form input:focus {
+    border-color: #315ba7;
+    box-shadow: 0 0 0 3px rgba(49,91,167,.08);
+}
+
+.step1-search-form button {
+    padding: 8px 13px;
+    border: none;
+    border-radius: 8px;
+    background: #14264b;
+    color: white;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+/* ========================================
+   STUDENT CARD
+======================================== */
+
+.step1-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(15, 23, 42, .05);
+}
+
+.step1-card-header {
+    min-height: 92px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border-bottom: 1px solid #e7edf5;
+}
+
+.step1-card-title {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.step1-card-number {
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    background: #14264b;
+    color: white;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.step1-card-title h2 {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.step1-card-title p {
+    color: #8090aa;
+    font-size: 10px;
+}
+
+.step1-card-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 9px;
+}
+
+.step1-card-filter span {
+    padding: 5px 11px;
+    background: #f1f5fb;
+    border-radius: 20px;
+    color: #244578;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.step1-card-filter select {
+    min-width: 145px;
+    padding: 8px 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    color: #243b62;
+    background: white;
+    font-size: 11px;
+}
+
+/* ========================================
+   TABLE
+======================================== */
+
+.step1-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.step1-table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+.step1-table thead {
+    background: #f4f7fb;
+}
+
+.step1-table th {
+    padding: 13px 15px;
+    color: #52698f;
+    font-size: 9px;
+    font-weight: 800;
+    text-align: left;
+}
+
+.step1-table td {
+    padding: 15px;
+    border-bottom: 1px solid #e7edf5;
+    color: #344b70;
+    font-size: 11px;
+}
+
+.step1-table tbody tr:hover {
+    background: #fafcff;
+}
+
+.step1-status {
+    display: inline-block;
+    padding: 5px 9px;
+    background: #fff7e5;
+    color: #bd6b00;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.step1-view-button {
+    display: inline-block;
+    padding: 7px 11px;
+    color: #23477f;
+    background: white;
+    border: 1px solid #cbd8eb;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.step1-view-button:hover {
+    color: white;
+    background: #14264b;
+    border-color: #14264b;
+}
+
+.step1-empty {
+    text-align: center;
+    padding: 35px !important;
+    color: #94a3b8 !important;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.step1-card-footer {
+    padding: 12px 16px;
+    color: #7184a4;
+    font-size: 10px;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 768px) {
+    .step1-banner {
+        padding: 18px;
+    }
+
+    .step1-banner h1 {
+        font-size: 19px;
+    }
+
+    .step1-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .step1-search-form input {
+        width: 100%;
+    }
+
+    .step1-card-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .step1-card-filter {
+        width: 100%;
+        align-items: flex-start;
+    }
+}

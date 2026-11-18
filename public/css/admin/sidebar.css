@@ -1,0 +1,922 @@
+
+/* =========================================================
+   ADZU SENIOR HIGH - ADMISSIONS SIDEBAR
+   Expanded: 260px
+   Compact: 78px
+   Top Collapse Button
+========================================================= */
+
+.admin-sidebar {
+    --sidebar-bg: #101b30;
+    --sidebar-bg-deep: #0b1425;
+    --sidebar-text: #d9e2f1;
+    --sidebar-muted: #91a0b8;
+    --sidebar-blue: #55b6e9;
+    --sidebar-gold: #f2c56b;
+
+    width: 260px;
+    height: 100vh;
+    height: 100dvh;
+
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 1000;
+
+    overflow: hidden;
+    color: var(--sidebar-text);
+
+    background:
+        radial-gradient(
+            ellipse at 0% 0%,
+            rgba(35, 87, 132, .22),
+            transparent 46%
+        ),
+        linear-gradient(
+            180deg,
+            var(--sidebar-bg) 0%,
+            #111c31 56%,
+            var(--sidebar-bg-deep) 100%
+        );
+
+    border-right: 1px solid rgba(194, 215, 244, .09);
+    box-shadow: 12px 0 32px rgba(8, 17, 32, .12);
+
+    font-family: 'Segoe UI', system-ui, -apple-system,
+        BlinkMacSystemFont, sans-serif;
+
+    transition: width .25s ease;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   BRAND / LOGO / COLLAPSE BUTTON
+========================================================= */
+
+.sidebar-brand {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    min-height: 66px;
+    padding: 10px 12px;
+
+    border-bottom: 1px solid rgba(194, 215, 244, .09);
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.sidebar-brand-logo {
+    display: grid;
+
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+
+    place-items: center;
+    overflow: hidden;
+
+    border: 1px solid rgba(242, 197, 107, .38);
+    border-radius: 11px;
+
+    background: rgba(255, 255, 255, .96);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, .22);
+}
+
+.sidebar-brand-logo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+
+    padding: 3px;
+    object-fit: contain;
+}
+
+.sidebar-brand-text {
+    display: flex;
+
+    min-width: 0;
+    flex: 1;
+
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sidebar-brand-text strong {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: .07em;
+    line-height: 1.25;
+}
+
+.sidebar-brand-text span {
+    color: #9fb5ce;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .025em;
+}
+
+/* Collapse button beside logo */
+
+.sidebar-brand .sidebar-collapse-toggle {
+    display: inline-flex;
+
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    min-height: 34px;
+    flex: 0 0 34px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 7px;
+    margin: 0;
+
+    border: 1px solid rgba(194, 215, 244, .13);
+    border-radius: 8px;
+
+    background: rgba(207, 224, 247, .07);
+    color: #cbd7e8;
+
+    cursor: pointer;
+
+    transition:
+        background .18s ease,
+        border-color .18s ease,
+        color .18s ease;
+}
+
+.sidebar-brand .sidebar-collapse-toggle:hover {
+    border-color: rgba(115, 193, 234, .35);
+    background: rgba(115, 193, 234, .14);
+    color: #fff;
+}
+
+.sidebar-brand .sidebar-collapse-toggle svg {
+    display: block;
+
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+}
+
+.sidebar-brand .sidebar-collapse-toggle span {
+    display: none !important;
+}
+
+.sidebar-brand-status,
+.sidebar-user-status {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 7px;
+
+    border-radius: 50%;
+    background: #65d3a4;
+
+    box-shadow: 0 0 0 3px rgba(101, 211, 164, .12);
+}
+
+/* =========================================================
+   SIDEBAR SCROLL
+========================================================= */
+
+.sidebar-scroll {
+    min-height: 0;
+    flex: 1 1 auto;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    padding: 10px 11px;
+
+    scrollbar-color: rgba(165, 187, 218, .28) transparent;
+    scrollbar-width: thin;
+}
+
+.sidebar-scroll::-webkit-scrollbar {
+    width: 4px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgba(165, 187, 218, .28);
+}
+
+/* =========================================================
+   NAVIGATION MENU
+========================================================= */
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sidebar-label {
+    padding: 8px 9px 5px;
+
+    color: #8292ab;
+
+    font-size: 9px;
+    font-weight: 750;
+
+    letter-spacing: .11em;
+    line-height: 1.4;
+
+    text-transform: uppercase;
+}
+
+.sidebar-label:first-child {
+    padding-top: 2px;
+}
+
+.sidebar-label-spaced {
+    margin-top: 9px;
+}
+
+/* Navigation links */
+
+.sidebar-menu a {
+    position: relative;
+
+    display: flex;
+    min-height: 34px;
+
+    align-items: center;
+    gap: 10px;
+
+    padding: 6px 10px;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    color: var(--sidebar-text);
+
+    font-size: 11px;
+    font-weight: 550;
+
+    line-height: 1.3;
+    text-decoration: none;
+
+    box-sizing: border-box;
+
+    transition:
+        background-color .18s ease,
+        border-color .18s ease,
+        color .18s ease,
+        transform .18s ease;
+}
+
+.sidebar-menu a > span:last-child {
+    min-width: 0;
+}
+
+.sidebar-menu a .menu-icon {
+    display: flex;
+
+    width: 17px;
+    height: 17px;
+    flex: 0 0 17px;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #92a5bf;
+    font-size: 15px;
+
+    transition:
+        color .18s ease,
+        transform .18s ease;
+}
+
+.menu-detail {
+    color: inherit;
+    font-weight: inherit;
+}
+
+/* Hover */
+
+.sidebar-menu a:hover {
+    transform: translateX(2px);
+
+    border-color: rgba(166, 196, 229, .08);
+    background: rgba(221, 236, 255, .075);
+
+    color: #fff;
+}
+
+.sidebar-menu a:hover .menu-icon {
+    color: var(--sidebar-blue);
+}
+
+/* Active */
+
+.sidebar-menu a.active {
+    border-color: rgba(115, 193, 234, .17);
+
+    background:
+        linear-gradient(
+            100deg,
+            rgba(39, 126, 181, .34),
+            rgba(34, 90, 137, .18)
+        );
+
+    box-shadow:
+        inset 3px 0 0 var(--sidebar-gold),
+        0 3px 8px rgba(4, 11, 23, .10);
+
+    color: #fff;
+    font-weight: 650;
+}
+
+.sidebar-menu a.active .menu-icon {
+    color: #83d2fa;
+}
+
+/* Focus */
+
+.sidebar-menu a:focus-visible,
+.sidebar-logout:focus-visible,
+.sidebar-collapse-toggle:focus-visible {
+    outline: 2px solid var(--sidebar-gold);
+    outline-offset: 3px;
+}
+
+/* =========================================================
+   SIDEBAR FOOTER
+========================================================= */
+
+.sidebar-footer {
+    flex: 0 0 auto;
+
+    padding: 8px 11px 9px;
+
+    border-top: 1px solid rgba(194, 215, 244, .1);
+    background: rgba(5, 12, 23, .22);
+    box-sizing: border-box;
+}
+
+/* No collapse button in footer */
+
+.utility-controls {
+    display: none !important;
+}
+
+/* =========================================================
+   USER PROFILE
+========================================================= */
+
+.sidebar-user {
+    display: flex;
+
+    min-width: 0;
+    min-height: 42px;
+
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 6px;
+    padding: 5px 8px;
+
+    border: 1px solid rgba(194, 215, 244, .08);
+    border-radius: 9px;
+
+    background: rgba(207, 224, 247, .045);
+
+    transition: background .18s ease;
+}
+
+.sidebar-user:hover {
+    background: rgba(207, 224, 247, .09);
+}
+
+.sidebar-avatar {
+    display: flex;
+
+    width: 31px;
+    height: 31px;
+    flex: 0 0 31px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 9px;
+
+    background: linear-gradient(145deg, #2e83b7, #20587f);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .16);
+
+    color: #fff;
+    font-size: 12px;
+    font-weight: 750;
+}
+
+.sidebar-user-info {
+    display: flex;
+
+    min-width: 0;
+    flex: 1;
+
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sidebar-user-info strong {
+    overflow: hidden;
+
+    color: #f4f7fc;
+
+    font-size: 10px;
+    font-weight: 650;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sidebar-user-info span {
+    overflow: hidden;
+
+    color: #91a0b8;
+
+    font-size: 9px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.sidebar-footer form {
+    margin: 0;
+}
+
+.sidebar-logout {
+    display: flex;
+
+    width: 100%;
+    min-height: 33px;
+
+    align-items: center;
+    justify-content: flex-start;
+    gap: 9px;
+
+    padding: 6px 10px;
+
+    border: 1px solid rgba(246, 139, 139, .14);
+    border-radius: 8px;
+
+    background: rgba(193, 73, 82, .09);
+    color: #eab2b7;
+
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 650;
+    text-align: left;
+
+    transition:
+        background-color .18s ease,
+        border-color .18s ease,
+        color .18s ease;
+}
+
+.sidebar-logout .logout-icon {
+    display: flex;
+
+    width: 15px;
+    height: 15px;
+    flex: 0 0 15px;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 15px;
+}
+
+.sidebar-logout:hover {
+    border-color: rgba(246, 139, 139, .3);
+    background: rgba(193, 73, 82, .2);
+    color: #fff;
+}
+
+/* =========================================================
+   COMPACT SIDEBAR
+   Controlled by theme.js:
+   body[data-sidebar-collapsed="true"]
+========================================================= */
+
+body[data-sidebar-collapsed="true"] .admin-sidebar {
+    width: 78px;
+}
+
+/* Compact brand */
+
+body[data-sidebar-collapsed="true"] .sidebar-brand {
+    justify-content: center;
+    gap: 0;
+    padding: 10px 8px;
+}
+
+body[data-sidebar-collapsed="true"] .sidebar-brand-logo,
+body[data-sidebar-collapsed="true"] .sidebar-brand-text {
+    display: none;
+}
+
+body[data-sidebar-collapsed="true"] .sidebar-brand .sidebar-collapse-toggle {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+    flex-basis: 38px;
+}
+
+/* Compact navigation */
+
+body[data-sidebar-collapsed="true"] .sidebar-scroll {
+    padding: 10px 8px;
+}
+
+body[data-sidebar-collapsed="true"] .sidebar-label {
+    display: none !important;
+}
+
+body[data-sidebar-collapsed="true"] .sidebar-menu {
+    gap: 5px;
+}
+
+body[data-sidebar-collapsed="true"] .sidebar-menu a {
+    width: 48px;
+    min-height: 42px;
+
+    justify-content: center;
+
+    margin: 0 auto;
+    padding: 8px;
+
+    gap: 0;
+    border-radius: 12px;
+}
+
+body[data-sidebar-collapsed="true"] .sidebar-menu a > span:not(.menu-icon) {
+    display: none !important;
+}
+
+body[data-sidebar-collapsed="true"] .sidebar-menu a .menu-icon {
+    width: 21px;
+    height: 21px;
+    flex-basis: 21px;
+    font-size: 18px;
+}
+
+/* Compact active navigation */
+
+body[data-sidebar-collapsed="true"] .sidebar-menu a.active {
+    box-shadow:
+        inset 3px 0 0 var(--sidebar-gold),
+        0 5px 14px rgba(4, 11, 23, .12);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(39, 126, 181, .42),
+            rgba(34, 90, 137, .20)
+        );
+}
+
+/* Compact tooltips */
+
+body[data-sidebar-collapsed="true"] .sidebar-menu a::after {
+    content: attr(data-tooltip);
+
+    position: absolute;
+
+    left: calc(100% + 12px);
+    top: 50%;
+
+    transform: translateY(-50%) translateX(-5px);
+
+    padding: 8px 11px;
+
+    border: 1px solid rgba(255, 255, 255, .10);
+    border-radius: 8px;
+
+    background: #17263e;
+    color: #fff;
+
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    z-index: 2000;
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .25);
+    transition: .18s ease;
+}
+
+body[data-sidebar-collapsed="true"] .sidebar-menu a:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
+}
+
+/* Compact footer */
+
+body[data-sidebar-collapsed="true"] .sidebar-footer {
+    padding: 8px 6px;
+}
+
+/* Compact profile */
+
+body[data-sidebar-collapsed="true"] .sidebar-user {
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+
+    justify-content: center;
+
+    margin: 6px auto;
+    padding: 3px;
+
+    border: 0;
+    background: transparent;
+}
+
+body[data-sidebar-collapsed="true"] .sidebar-user-info {
+    display: none !important;
+}
+
+body[data-sidebar-collapsed="true"] .sidebar-avatar {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+}
+
+/* Compact logout */
+
+body[data-sidebar-collapsed="true"] .sidebar-logout {
+    width: 44px;
+    min-height: 38px;
+
+    justify-content: center;
+
+    margin: 0 auto;
+    padding: 7px;
+
+    border-radius: 9px;
+}
+
+body[data-sidebar-collapsed="true"] .sidebar-logout > span:not(.logout-icon) {
+    display: none !important;
+}
+
+body[data-sidebar-collapsed="true"] .sidebar-logout .logout-icon {
+    font-size: 18px;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) and (min-width: 601px) {
+
+    .admin-sidebar {
+        width: 230px;
+    }
+
+    .sidebar-brand {
+        gap: 8px;
+        padding-inline: 10px;
+    }
+
+    .sidebar-scroll {
+        padding-inline: 9px;
+    }
+
+    .sidebar-menu a {
+        gap: 9px;
+        padding-inline: 9px;
+        font-size: 10px;
+    }
+
+    body[data-sidebar-collapsed="true"] .admin-sidebar {
+        width: 78px;
+    }
+}
+
+/* =========================================================
+   SHORT SCREEN ADJUSTMENT
+========================================================= */
+
+@media (min-width: 601px) and (max-height: 700px) {
+
+    .sidebar-brand {
+        min-height: 54px;
+        padding: 7px 10px;
+    }
+
+    .sidebar-brand-logo {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        min-height: 36px;
+        flex-basis: 36px;
+    }
+
+    .sidebar-scroll {
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    .sidebar-label {
+        padding-top: 5px;
+        padding-bottom: 3px;
+    }
+
+    .sidebar-label-spaced {
+        margin-top: 5px;
+    }
+
+    .sidebar-menu a {
+        min-height: 30px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+
+    .sidebar-footer {
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+    .sidebar-user {
+        min-height: 36px;
+        margin-bottom: 5px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   Always expanded on mobile
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .admin-sidebar {
+        width: 100% !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none;
+
+        overflow: visible;
+
+        border-right: 0;
+        border-bottom: 1px solid rgba(194, 215, 244, .12);
+
+        box-shadow: 0 10px 25px rgba(8, 17, 32, .12);
+    }
+
+    .sidebar-brand {
+        min-height: 66px;
+        padding: 10px 15px;
+        justify-content: flex-start;
+    }
+
+    .sidebar-scroll {
+        max-height: min(52vh, 390px);
+        flex: 0 1 auto;
+        padding: 10px 11px;
+    }
+
+    .sidebar-label-spaced {
+        margin-top: 9px;
+    }
+
+    .sidebar-footer {
+        padding: 8px 11px 9px;
+    }
+
+    /* Keep sidebar expanded on mobile */
+
+    body[data-sidebar-collapsed="true"] .admin-sidebar {
+        width: 100% !important;
+    }
+
+    body[data-sidebar-collapsed="true"] .sidebar-brand {
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    body[data-sidebar-collapsed="true"] .sidebar-brand-logo {
+        display: grid;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        flex-basis: 40px;
+    }
+
+    body[data-sidebar-collapsed="true"] .sidebar-brand-text,
+    body[data-sidebar-collapsed="true"] .sidebar-label,
+    body[data-sidebar-collapsed="true"] .sidebar-user-info,
+    body[data-sidebar-collapsed="true"] .sidebar-menu a > span:not(.menu-icon),
+    body[data-sidebar-collapsed="true"] .sidebar-logout > span:not(.logout-icon) {
+        display: revert !important;
+    }
+
+    body[data-sidebar-collapsed="true"] .sidebar-menu a {
+        width: 100%;
+        min-height: 34px;
+
+        justify-content: flex-start;
+
+        margin: 0;
+        padding: 6px 10px;
+        gap: 10px;
+    }
+
+    body[data-sidebar-collapsed="true"] .sidebar-menu a .menu-icon {
+        width: 17px;
+        height: 17px;
+        flex-basis: 17px;
+        font-size: 15px;
+    }
+
+    body[data-sidebar-collapsed="true"] .sidebar-user {
+        width: auto;
+        height: auto;
+        min-height: 42px;
+
+        justify-content: flex-start;
+
+        margin: 0 0 6px;
+        padding: 5px 8px;
+    }
+
+    body[data-sidebar-collapsed="true"] .sidebar-avatar {
+        width: 31px;
+        height: 31px;
+        flex-basis: 31px;
+    }
+
+    body[data-sidebar-collapsed="true"] .sidebar-logout {
+        width: 100%;
+        justify-content: flex-start;
+        margin: 0;
+    }
+
+    /* Collapse button remains icon-only */
+
+    .sidebar-brand .sidebar-collapse-toggle {
+        width: 34px;
+        height: 34px;
+        min-width: 34px;
+        min-height: 34px;
+        flex-basis: 34px;
+        margin-left: auto;
+    }
+}
+
+/* =========================================================
+   ACCESSIBILITY / REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .admin-sidebar,
+    .sidebar-menu a,
+    .sidebar-menu a .menu-icon,
+    .sidebar-logout,
+    .sidebar-collapse-toggle {
+        transition: none !important;
+    }
+
+    .sidebar-menu a:hover {
+        transform: none;
+    }
+
+    .sidebar-menu a::after {
+        transition: none !important;
+    }
+}

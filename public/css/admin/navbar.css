@@ -1,0 +1,362 @@
+
+/* =========================================================
+   ADZU SENIOR HIGH - ADMIN NAVBAR
+   Compact Professional Design
+========================================================= */
+
+.admin-navbar {
+    position: relative;
+    z-index: 20;
+    width: 100%;
+    min-height: 105px;
+    padding: 18px 30px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    background: var(--admin-panel, #ffffff);
+    color: var(--admin-text, #172033);
+    border-bottom: 1px solid var(--admin-border, #e8ecf2);
+}
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.navbar-heading {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.navbar-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #6481a8;
+}
+
+.navbar-title-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.navbar-title-row h1 {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.3;
+    font-weight: 800;
+    color: var(--admin-text, #172b4d);
+}
+
+.navbar-divider {
+    color: var(--admin-text-muted, #c2cad5);
+}
+
+.navbar-section {
+    font-size: 12px;
+    color: var(--admin-text-muted, #7b8798);
+}
+
+.navbar-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--admin-text-muted, #7b8798);
+}
+
+.date-indicator,
+.admin-status-dot {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 7px;
+    border-radius: 50%;
+    background: #27ae60;
+}
+
+/* =========================================================
+   NAVBAR ACTIONS
+========================================================= */
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 0 0 auto;
+    gap: 16px;
+}
+
+/* =========================================================
+   THEME TOGGLE - ICON ONLY
+========================================================= */
+
+.admin-navbar .navbar-theme-toggle {
+    display: inline-flex !important;
+    flex: 0 0 38px;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px !important;
+    min-width: 38px;
+    max-width: 38px;
+    height: 38px;
+    min-height: 38px;
+
+    padding: 9px;
+    margin: 0;
+
+    border: 1px solid var(--admin-border, #e8ecf2);
+    border-radius: 10px;
+
+    background: var(--admin-panel, #ffffff);
+    color: var(--admin-text, #172033);
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.admin-navbar .navbar-theme-toggle:hover {
+    border-color: var(--admin-link, #244a7c);
+    background: var(--admin-panel-soft, #f4f7fb);
+}
+
+.admin-navbar .navbar-theme-toggle:active {
+    transform: scale(0.95);
+}
+
+.admin-navbar .navbar-theme-toggle:focus-visible {
+    outline: 3px solid rgba(59, 130, 246, 0.25);
+    outline-offset: 3px;
+}
+
+.admin-navbar .navbar-theme-toggle svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+}
+
+/* Light mode: Moon icon */
+
+.admin-navbar .navbar-theme-toggle .theme-icon-moon {
+    display: block;
+}
+
+.admin-navbar .navbar-theme-toggle .theme-icon-sun {
+    display: none;
+}
+
+/* Dark mode: Sun icon */
+
+:root[data-theme="dark"] .admin-navbar .navbar-theme-toggle .theme-icon-moon {
+    display: none;
+}
+
+:root[data-theme="dark"] .admin-navbar .navbar-theme-toggle .theme-icon-sun {
+    display: block;
+}
+
+/* =========================================================
+   ADMIN PROFILE
+========================================================= */
+
+.navbar-admin {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 11px;
+    min-width: 0;
+}
+
+.navbar-admin-avatar {
+    width: 39px;
+    height: 39px;
+    flex: 0 0 39px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+    background: var(--admin-panel-muted, #e8effa);
+    color: var(--admin-link, #244a7c);
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.navbar-admin-info {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.navbar-admin-info strong {
+    max-width: 150px;
+    overflow: hidden;
+
+    font-size: 12px;
+    font-weight: 750;
+    color: var(--admin-text, #172033);
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.navbar-admin-info span {
+    font-size: 10px;
+    color: var(--admin-text-muted, #8994a5);
+}
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+:root[data-theme="dark"] .admin-navbar {
+    background: var(--admin-panel, #172235);
+    color: var(--admin-text, #e8eef7);
+    border-bottom-color: var(--admin-border, #2c3b50);
+}
+
+:root[data-theme="dark"] .navbar-title-row h1,
+:root[data-theme="dark"] .navbar-admin-info strong {
+    color: var(--admin-text, #e8eef7);
+}
+
+:root[data-theme="dark"] .admin-navbar .navbar-theme-toggle {
+    background: var(--admin-panel, #172235);
+    color: var(--admin-text, #e8eef7);
+    border-color: var(--admin-border, #2c3b50);
+}
+
+:root[data-theme="dark"] .admin-navbar .navbar-theme-toggle:hover {
+    background: var(--admin-panel-soft, #223149);
+}
+
+:root[data-theme="dark"] .navbar-admin-avatar {
+    background: var(--admin-panel-soft, #26364e);
+    color: #9cc7ff;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+    .admin-navbar {
+        padding: 17px 22px;
+        gap: 14px;
+    }
+
+    .navbar-actions {
+        gap: 12px;
+    }
+
+    .navbar-title-row h1 {
+        font-size: 19px;
+    }
+
+    .navbar-admin-info strong {
+        max-width: 110px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+    .admin-navbar {
+        min-height: 78px;
+        padding: 13px 16px;
+        gap: 10px;
+    }
+
+    .navbar-heading {
+        gap: 5px;
+    }
+
+    .navbar-eyebrow {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .navbar-title-row {
+        gap: 6px;
+    }
+
+    .navbar-title-row h1 {
+        font-size: 16px;
+    }
+
+    .navbar-section,
+    .navbar-divider,
+    .navbar-date {
+        display: none;
+    }
+
+    .navbar-actions {
+        gap: 9px;
+    }
+
+    .admin-navbar .navbar-theme-toggle {
+        width: 36px !important;
+        min-width: 36px;
+        max-width: 36px;
+        height: 36px;
+        min-height: 36px;
+        flex-basis: 36px;
+        padding: 8px;
+    }
+
+    .admin-navbar .navbar-admin {
+        gap: 0;
+    }
+
+    .navbar-admin-avatar {
+        width: 35px;
+        height: 35px;
+        flex-basis: 35px;
+        font-size: 12px;
+    }
+
+    .navbar-admin-info {
+        display: none;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+    .admin-navbar {
+        padding: 12px;
+    }
+
+    .navbar-title-row h1 {
+        font-size: 14px;
+    }
+
+    .navbar-eyebrow {
+        font-size: 7px;
+    }
+
+    .navbar-actions {
+        gap: 7px;
+    }
+}
